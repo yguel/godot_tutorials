@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=3 uid="uid://csk31eoq2su1x"]
+
+[ext_resource type="Script" path="res://scenes/fixed_min_size_void_window/fixed_min_size_void_window.gd" id="1_rl251"]
+
+[node name="FixedMinSizeVoidWindow" type="Control"]
+custom_minimum_size = Vector2(800, 600)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+script = ExtResource("1_rl251")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2

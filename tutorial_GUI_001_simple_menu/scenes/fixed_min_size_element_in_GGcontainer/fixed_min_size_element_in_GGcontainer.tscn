@@ -1,0 +1,76 @@
+[gd_scene load_steps=5 format=3 uid="uid://coe5alpc70gxr"]
+
+[ext_resource type="Script" path="res://addons/GameGUI/GGInitialWindowSize.gd" id="1_pbet8"]
+[ext_resource type="Script" path="res://addons/GameGUI/GGVBox.gd" id="1_v643e"]
+[ext_resource type="Script" path="res://addons/GameGUI/GGLimitedSizeComponent.gd" id="2_8jb55"]
+[ext_resource type="Script" path="res://addons/GameGUI/GGLabel.gd" id="2_qjn1y"]
+
+[node name="FixedMinSizeElementInGGcontainer" type="Container"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_pbet8")
+initial_window_size = Vector2(1152, 648)
+parameters = {
+"safe_area_bottom_margin": 0.0,
+"safe_area_left_margin": 0.0,
+"safe_area_right_margin": 0.0,
+"safe_area_top_margin": 0.0
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 2
+
+[node name="TopContainer" type="Container" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+script = ExtResource("1_v643e")
+parameters = {
+"safe_area_bottom_margin": 0.0,
+"safe_area_left_margin": 0.0,
+"safe_area_right_margin": 0.0,
+"safe_area_top_margin": 0.0
+}
+
+[node name="GGLimitedSizeComponent" type="Container" parent="TopContainer"]
+layout_mode = 2
+script = ExtResource("2_8jb55")
+min_width = 1
+min_height = 1
+min_size = Vector2(300, 100)
+
+[node name="MinSizeIs300x100px" type="Label" parent="TopContainer/GGLimitedSizeComponent"]
+custom_minimum_size = Vector2(300, 100)
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 18
+text = "Minimum size is 300x100 pixels"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("2_qjn1y")
+vertical_mode = 5
+layout_size = Vector2(0, 26)
+is_configured = true
+
+[node name="GGLimitedSizeComponent2" type="Container" parent="TopContainer"]
+layout_mode = 2
+script = ExtResource("2_8jb55")
+min_width = 1
+min_height = 1
+min_size = Vector2(100, 200)
+
+[node name="MinSizeIs100x200px" type="Label" parent="TopContainer/GGLimitedSizeComponent2"]
+custom_minimum_size = Vector2(100, 200)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 18
+text = "Minimum size is 100x200 pixels"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("2_qjn1y")
+vertical_mode = 5
+layout_size = Vector2(0, 26)
+is_configured = true
