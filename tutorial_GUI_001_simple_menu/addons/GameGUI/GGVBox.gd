@@ -167,3 +167,7 @@ func _perform_layout( available_bounds:Rect2 ):
 			_perform_component_layout( child, Rect2(pos,Vector2(sz.x,child.size.y)) )
 			pos += Vector2( 0, child.size.y )
 
+func get_minimum_size()->Vector2:
+	var largest_size = _get_largest_child_min_size()
+	var sum_size = _get_sum_of_child_min_sizes()
+	return Vector2(largest_size.x,sum_size.y)

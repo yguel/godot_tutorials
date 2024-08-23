@@ -342,6 +342,18 @@ func _get_largest_child_size()->Vector2:
 			max_w = max( max_w, child.size.x )
 			max_h = max( max_h, child.size.y )
 	return Vector2(max_w,max_h)
+	
+func _get_largest_child_min_size()->Vector2:
+	# 'x' and 'y' will possibly come from different children.
+	var max_w := 0.0
+	var max_h := 0.0
+	for i in range(get_child_count()):
+		var child = get_child(i)
+		if not (child is Control) or not child.visible: continue
+		if child is Control:  # includes GGComponent
+			max_w = max( max_w, child.min_size.x )
+			max_h = max( max_h, child.min_size.y )
+	return Vector2(max_w,max_h)
 
 func _get_sum_of_child_sizes()->Vector2:
 	var sum := Vector2(0,0)
@@ -349,6 +361,14 @@ func _get_sum_of_child_sizes()->Vector2:
 		var child = get_child(i)
 		if not (child is Control) or not child.visible: continue
 		sum += child.size
+	return sum
+
+func _get_sum_of_child_min_sizes()->Vector2:
+	var sum := Vector2(0,0)
+	for i in range(get_child_count()):
+		var child = get_child(i)
+		if not (child is Control) or not child.visible: continue
+		sum += child.min_size
 	return sum
 
 func _perform_layout( available_bounds:Rect2 ):
