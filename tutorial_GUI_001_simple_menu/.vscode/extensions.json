@@ -1,0 +1,11 @@
+{
+  "recommendations": [
+    "ms-vscode.cpptools-extension-pack",
+    "donjayamanne.githistory",
+    "mhutchie.git-graph",
+    "xaver.clang-format",
+    "aloysetech.hex-array-formatter",
+    "github.copilot",
+    "geequlim.godot-tools"
+  ]
+}

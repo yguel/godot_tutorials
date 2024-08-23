@@ -1,0 +1,11 @@
+{
+    "editor.formatOnSave": true,
+    "editor.detectIndentation": true,
+    "editor.formatOnPaste": true,
+    "editor.wordWrap": "on",
+    "godotTools.editorPath.godot4": "/media/manu/manuLinux/system/godot/Godot_v4.2-stable_linux.x86_64",
+    "[gdscript]": {
+        "editor.tabSize": 4,
+        "editor.insertSpaces": true
+    }
+}
